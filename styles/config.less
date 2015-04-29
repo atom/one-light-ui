@@ -1,14 +1,25 @@
 // Compact mode ----------------------------------------------
 
-html {
-  font-size: @font-size*1.25;
+@theme-layoutmode: ~'theme-@{ui-theme-name}-layoutmode';
+
+// Default
+html { font-size: @font-size; }
+
+
+// Large screen (>= 27")
+@media (min-width: 2560px) {
+  [@{theme-layoutmode}="auto"] { font-size: @font-size + 2px; }
 }
 
-@media (max-width: 1200px), (max-height: 600px) {
+// Medium screen (>= 20")
+@media (min-width: 1920px) {
+  [@{theme-layoutmode}="auto"] { font-size: @font-size + 1px; }
+}
 
-  html {
-  	font-size: @font-size;
-  }
+// Small screen (<= 13")
+
+.compact-mode() {
+  font-size: @font-size - 1px;
 
   atom-workspace {
     padding-right: 0;
@@ -21,12 +32,40 @@ html {
     padding-top: 0;
   }
 
+  .tab-bar {
+    border-radius: 0; // TODO: move to tabs.less
+    .tab::before,
+    .tab::after {
+      border-radius: 0;
+    }
+  }
+
+
+  // tree-view
   .tree-view .project-root.project-root {
     padding-top: 0;
+    &:before {
+      height: @ui-tab-height;
+    }
   }
 
-  .tab-bar .tab::after {
-    border-radius: 0;
+  .list-group li:not(.list-nested-item),
+  .list-tree li:not(.list-nested-item),
+  .list-group li.list-nested-item > .list-item, .list-tree li.list-nested-item > .list-item {
+    line-height: @ui-line-height*.92;
   }
+  .list-group .selected::before,
+  .list-tree .selected::before {
+    height: @ui-line-height*.92;
+  }
+}
 
+[@{theme-layoutmode}="compact"] {
+  .compact-mode();
+}
+
+@media (max-width: 1280px), (max-height: 800px) {
+  [@{theme-layoutmode}="auto"] {
+    .compact-mode();
+  }
 }
