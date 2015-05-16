@@ -142,37 +142,39 @@
 
 
 // Components (Custom) -----------------
-@badge-background-color:           fadein(@background-color-highlight, 8%);
+@badge-background-color:            fadein(@background-color-highlight, 8%);
 
-@button-text-color-selected:       contrast(@button-background-color-selected, hsl(@ui-hue,100%,100%), hsl(@ui-hue,100%,12%), 40% );
-@button-border-color-selected:     @base-accent-color;
+@button-text-color-selected:        contrast(@button-background-color-selected, hsl(@ui-hue,100%,100%), hsl(@ui-hue,100%,12%), 40% );
+@button-border-color-selected:      @base-accent-color;
 
-@checkbox-background-color:        fade(@base-accent-color, 33%);
+@checkbox-background-color:         fade(@base-accent-color, 33%);
 
-@input-background-color-focus:     mix(@base-accent-color, @input-background-color, 6%);
-@input-selection-color:            @background-color-selected;
-@input-selection-color-focus:      fadein(@background-color-selected, 6%);
+@input-background-color-focus:      mix(@base-accent-color, @input-background-color, 6%);
+@input-selection-color:             @background-color-selected;
+@input-selection-color-focus:       fadein(@background-color-selected, 6%);
 
-@key-binding-border-color:         @base-border-color;
-@key-binding-background-color:     @level-2-color;
+@key-binding-border-color:          @base-border-color;
+@key-binding-background-color:      @level-2-color;
 
-@overlay-backdrop-color:           hsla(@ui-hue,@ui-saturation,5%,.5);
+@overlay-backdrop-color:            hsla(@ui-hue,@ui-saturation,5%,.5);
 
-@progress-background-color:        @base-accent-color;
+@progress-background-color:         @base-accent-color;
 
-@scrollbar-color:                  @level-1-color;
-@scrollbar-background-color:       @level-3-color; // replaced `transparent` with a solid color to test https://github.com/atom/one-light-ui/issues/4
+@scrollbar-color:                   darken(@level-3-color, 14%);
+@scrollbar-background-color:        @level-3-color; // replaced `transparent` with a solid color to test https://github.com/atom/one-light-ui/issues/4
+@scrollbar-color-editor:            contrast(@ui-syntax-color, darken(@ui-syntax-color, 14%), lighten(@ui-syntax-color, 9%) );
+@scrollbar-background-color-editor: @ui-syntax-color;
 
-@tab-text-color:                   @text-color-subtle;
-@tab-text-color-active:            @text-color-highlight;
-@tab-text-color-editor:            contrast(@ui-syntax-color, lighten(@ui-syntax-color, 70%), @text-color-highlight );
-@tab-icon-color:                   @text-color-subtle;
-@tab-background-color-editor:      @ui-syntax-color;
+@tab-text-color:                    @text-color-subtle;
+@tab-text-color-active:             @text-color-highlight;
+@tab-text-color-editor:             contrast(@ui-syntax-color, lighten(@ui-syntax-color, 70%), @text-color-highlight );
+@tab-icon-color:                    @text-color-subtle;
+@tab-background-color-editor:       @ui-syntax-color;
 
-@tooltip-background-color:         @base-accent-color;
-@tooltip-text-color:               contrast(@tooltip-background-color, hsl(@ui-hue,100%,100%), hsl(@ui-hue,100%,12%), 40% );
-@tooltip-text-key-color:           @tooltip-background-color;
-@tooltip-background-key-color:     @tooltip-text-color;
+@tooltip-background-color:          @base-accent-color;
+@tooltip-text-color:                contrast(@tooltip-background-color, hsl(@ui-hue,100%,100%), hsl(@ui-hue,100%,12%), 40% );
+@tooltip-text-key-color:            @tooltip-background-color;
+@tooltip-background-key-color:      @tooltip-text-color;
 
 
 // Sizes (Custom) -----------------
