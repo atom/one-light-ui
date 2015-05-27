@@ -7,14 +7,18 @@
 @ui-syntax-color: @syntax-background-color;
 
 // Color guards -----------------
-@ui-hue:          hue(@ui-syntax-color);
+@ui-s-h: hue(@ui-syntax-color);
+.ui-hue() when (@ui-s-h = 0) { @ui-hue: 220; } // Use blue hue when no saturation
+.ui-hue() when (@ui-s-h > 0) { @ui-hue: @ui-s-h; }
+.ui-hue();
+
 @ui-saturation:   min( saturation(@ui-syntax-color), 24%); // max saturation
 @ui-lightness:    max(  lightness(@ui-syntax-color), 92%); // min lightness
 
 // Main colors -----------------
-@ui-fg: hsl(@ui-hue, @ui-saturation, @ui-lightness - 66%);
-@ui-bg: hsl(@ui-hue, @ui-saturation, @ui-lightness); // normalized @syntax-background-color
-
+@ui-fg:     hsl(@ui-hue, @ui-saturation, @ui-lightness - 72%);
+@ui-bg:     hsl(@ui-hue, @ui-saturation, @ui-lightness); // normalized @syntax-background-color
+@ui-border: darken(@base-background-color, 16%);
 
 
 
@@ -27,8 +31,8 @@
 
 // Text -----------------
 @text-color:            @ui-fg;
-@text-color-subtle:     fadeout(@text-color, 30%);
-@text-color-highlight:  hsl(@ui-hue, @ui-saturation + 20%, 30%);
+@text-color-subtle:     lighten(@text-color, 32%);
+@text-color-highlight:  darken(@text-color, 10%);
 @text-color-selected:   darken(@text-color-highlight, 10%);
 
 @text-color-info:    hsl(208, 100%, 54%);
@@ -43,15 +47,15 @@
 @background-color-warning: hsl( 40,  60%, 52%);
 @background-color-error:   hsl(  0,  60%, 56%);
 
-@background-color-highlight: hsla(@ui-hue, 10% + @ui-saturation, 50%,.12);
-@background-color-selected:  hsla(@ui-hue, 10% + @ui-saturation, 50%,.18);
+@background-color-highlight: hsla(@ui-hue, @ui-saturation, 50%,.08);
+@background-color-selected:  hsla(@ui-hue, @ui-saturation, 50%,.16);
 
 @app-background-color: @level-3-color;
 
 
 // Base -----------------
 @base-background-color: @ui-bg;
-@base-border-color:     darken(@base-background-color, 12%);
+@base-border-color:     @ui-border;
 
 
 // Components -----------------
@@ -134,11 +138,11 @@
 // Background (Custom) -----------------
 @level-1-color: lighten(@base-background-color, 4%);
 @level-2-color: @base-background-color;
-@level-3-color: darken(@base-background-color, 6%);
+@level-3-color: darken(@base-background-color, 8%);
 
 
 // Base (Custom) -----------------
-@base-accent-color: hsl(@ui-hue, @ui-saturation + 80%, min(@ui-lightness - 40%, 60%) );
+@base-accent-color: hsl(@ui-hue, 64%, 56%);
 
 
 // Components (Custom) -----------------
@@ -149,7 +153,7 @@
 
 @checkbox-background-color:         fade(@base-accent-color, 33%);
 
-@input-background-color-focus:      mix(@base-accent-color, @input-background-color, 6%);
+@input-background-color-focus:      hsl(@ui-hue, 100%, 96%);
 @input-selection-color:             @background-color-selected;
 @input-selection-color-focus:       fadein(@background-color-selected, 6%);
 
