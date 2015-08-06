@@ -10,7 +10,7 @@
   ],
   "repository": "https://github.com/atom/one-light-ui.git",
   "license": "MIT",
-  "main": "lib/settings",
+  "main": "lib/main",
   "engines": {
     "atom": ">0.50.0"
   },

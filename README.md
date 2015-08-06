@@ -1,4 +1,4 @@
-## One light UI theme
+## One light UI theme [![Build Status](https://travis-ci.org/atom/one-light-ui.svg?branch=master)](https://travis-ci.org/atom/one-light-ui)
 
 A light UI theme that adjusts to most Syntax themes.
 
