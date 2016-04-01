@@ -2,12 +2,19 @@ root = document.documentElement
 
 module.exports =
   activate: (state) ->
-    atom.config.observe('one-light-ui.fontSize', setFontSize)
-    atom.config.observe('one-light-ui.layoutMode', setLayoutMode)
+    atom.config.observe 'one-light-ui.fontSize', (value) ->
+      setFontSize(value)
+
+    atom.config.observe 'one-light-ui.layoutMode', (value) ->
+      setLayoutMode(value)
+
+    atom.config.observe 'one-light-ui.tabSizing', (value) ->
+      setTabSizing(value)
 
   deactivate: ->
     unsetFontSize()
     unsetLayoutMode()
+    unsetTabSizing()
 
 # Font Size -----------------------
 setFontSize = (currentFontSize) ->
@@ -25,3 +32,10 @@ setLayoutMode = (layoutMode) ->
 
 unsetLayoutMode = ->
   root.removeAttribute('theme-one-light-ui-layoutmode')
+
+# Tab Sizing -----------------------
+setTabSizing = (tabSizing) ->
+  root.setAttribute('theme-one-light-ui-tabsizing', tabSizing.toLowerCase())
+
+unsetTabSizing = ->
+  root.removeAttribute('theme-one-light-ui-tabsizing')
