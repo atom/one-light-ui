@@ -17,3 +17,9 @@ describe "One Light UI theme", ->
 
     atom.config.set('one-light-ui.layoutMode', 'Spacious')
     expect(document.documentElement.getAttribute('theme-one-light-ui-layoutmode')).toBe 'spacious'
+
+  it "allows the tab sizing to be set via config", ->
+    expect(document.documentElement.getAttribute('theme-one-light-ui-tabsizing')).toBe 'auto'
+
+    atom.config.set('one-light-ui.tabSizing', 'Minimum')
+    expect(document.documentElement.getAttribute('theme-one-light-ui-tabsizing')).toBe 'minimum'

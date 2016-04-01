@@ -8,8 +8,8 @@
     "adaptive",
     "ui"
   ],
-  "repository": "https://github.com/atom/one-light-ui.git",
   "license": "MIT",
+  "repository": "https://github.com/atom/one-light-ui",
   "main": "lib/main",
   "engines": {
     "atom": ">0.40.0"
@@ -38,6 +38,17 @@
         "Compact",
         "Auto",
         "Spacious"
+      ]
+    },
+    "tabSizing": {
+      "title": "Tab Sizing",
+      "description": "In minimum width mode the tabs will be as small as possible but in even width mode, all tabs will be the same size. In auto mode the tabs switch based on the window size.",
+      "type": "string",
+      "default": "Auto",
+      "enum": [
+        "Even",
+        "Auto",
+        "Minimum"
       ]
     }
   }
