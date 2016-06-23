@@ -144,6 +144,10 @@
 // Base (Custom) -----------------
 @base-accent-color: hsl(@ui-hue, 64%, 56%);
 
+// Base Accent (Custom) -----------------
+@base-accent-color:            hsl(@ui-hue, 64%, 56%);
+@base-accent-text-color:       darken(@base-accent-color, 3%); // A bit darker when used for smaller things
+@base-accent-text-on-bg-color: contrast(@base-accent-color, white, hsl(@ui-hue,100%,12%), 33% );
 
 // Components (Custom) -----------------
 @badge-background-color:            fadein(@background-color-highlight, 8%);
