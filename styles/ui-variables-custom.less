@@ -46,20 +46,20 @@
 
 
 // Base (Custom) -----------------
-@base-accent-color: hsl(@ui-hue, 64%, 56%);
+@accent-color: hsl(@ui-hue, 64%, 56%);
 
 // Base Accent (Custom) -----------------
-@base-accent-color:            hsl(@ui-hue, 64%, 56%);
-@base-accent-text-color:       darken(@base-accent-color, 3%); // A bit darker when used for smaller things
-@base-accent-text-on-bg-color: contrast(@base-accent-color, white, hsl(@ui-hue,100%,12%), 33% );
+@accent-color:            hsl(@ui-hue, 64%, 56%);
+@accent-text-color:       darken(@accent-color, 3%); // A bit darker when used for smaller things
+@accent-text-on-bg-color: contrast(@accent-color, white, hsl(@ui-hue,100%,12%), 33% );
 
 // Components (Custom) -----------------
 @badge-background-color:            fadein(@background-color-highlight, 8%);
 
 @button-text-color-selected:        contrast(@button-background-color-selected, hsl(@ui-hue,100%,100%), hsl(@ui-hue,100%,12%), 40% );
-@button-border-color-selected:      @base-accent-color;
+@button-border-color-selected:      @accent-color;
 
-@checkbox-background-color:         fade(@base-accent-color, 33%);
+@checkbox-background-color:         fade(@accent-color, 33%);
 
 @input-background-color-focus:      hsl(@ui-hue, 100%, 96%);
 @input-selection-color:             @background-color-selected;
@@ -70,7 +70,7 @@
 
 @overlay-backdrop-color:            hsla(@ui-hue,@ui-saturation,5%,.5);
 
-@progress-background-color:         @base-accent-color;
+@progress-background-color:         @accent-color;
 
 @scrollbar-color:                   darken(@level-3-color, 14%);
 @scrollbar-background-color:        @level-3-color; // replaced `transparent` with a solid color to test https://github.com/atom/one-light-ui/issues/4
@@ -82,7 +82,7 @@
 @tab-text-color-editor:             contrast(@ui-syntax-color, lighten(@ui-syntax-color, 70%), @text-color-highlight );
 @tab-background-color-editor:       @ui-syntax-color;
 
-@tooltip-background-color:          @base-accent-color;
+@tooltip-background-color:          @accent-color;
 @tooltip-text-color:                contrast(@tooltip-background-color, hsl(@ui-hue,100%,100%), hsl(@ui-hue,100%,12%), 40% );
 @tooltip-text-key-color:            @tooltip-background-color;
 @tooltip-background-key-color:      @tooltip-text-color;
