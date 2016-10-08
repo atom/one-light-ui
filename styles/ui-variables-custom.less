@@ -51,7 +51,7 @@
 @accent-text-on-bg-color: contrast(@accent-color, white, hsl(@ui-hue,100%,12%), 33% );
 
 // Components (Custom) -----------------
-@badge-background-color:            fadein(@background-color-highlight, 8%);
+@badge-background-color:            @background-color-selected;
 
 @button-text-color-selected:        @accent-text-on-bg-color;
 @button-border-color-selected:      @accent-color;
@@ -78,6 +78,8 @@
 @tab-text-color-active:             @text-color-highlight;
 @tab-text-color-editor:             contrast(@ui-syntax-color, lighten(@ui-syntax-color, 70%), @text-color-highlight );
 @tab-background-color-editor:       @ui-syntax-color;
+
+@tree-view-background-selected-color: darken(@level-3-color, 5%);
 
 @tooltip-background-color:          @accent-color;
 @tooltip-text-color:                @accent-text-on-bg-color;
