@@ -19,7 +19,7 @@
 // Main colors -----------------
 @ui-fg:     hsl(@ui-hue, @ui-saturation, @ui-lightness - 72%);
 @ui-bg:     hsl(@ui-hue, @ui-saturation, @ui-lightness); // normalized @syntax-background-color
-@ui-border: darken(@base-background-color, 16%);
+@ui-border: darken(@level-3-color, 6%);
 
 
 
@@ -43,7 +43,7 @@
 // Background (Custom) -----------------
 @level-1-color: lighten(@base-background-color, 4%);
 @level-2-color: @base-background-color;
-@level-3-color: darken(@base-background-color, 8%);
+@level-3-color: darken(@base-background-color, 6%);
 
 
 // Accent (Custom) -----------------
@@ -88,7 +88,7 @@
 @tab-text-color-editor:             contrast(@ui-syntax-color, lighten(@ui-syntax-color, 70%), @text-color-highlight );
 @tab-background-color-editor:       @ui-syntax-color;
 
-@tree-view-background-selected-color: darken(@level-3-color, 5%);
+@tree-view-background-selected-color: @background-color-selected;
 
 @tooltip-background-color:          @accent-bg-color;
 @tooltip-text-color:                @accent-bg-text-color;
