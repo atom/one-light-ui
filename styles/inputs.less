@@ -1,17 +1,4 @@
 
-
-//
-// Text
-// -------------------------
-
-.input-text,
-.input-search,
-.input-textarea {
-  &:focus {
-    .focus();
-  }
-}
-
 //
 // Checkbox
 // -------------------------
@@ -72,5 +59,20 @@
   }
   &:before {
     background-color: @accent-text-color;
+  }
+}
+
+
+
+// States -------------------------
+
+.input-text,
+.input-search,
+.input-number,
+.input-textarea,
+.input-select,
+.input-color {
+  &:focus {
+    .focus();
   }
 }
