@@ -51,7 +51,8 @@
   }
   &:focus {
     border-color: transparent;
-    box-shadow: inset 0 0 0 1px fade(@_text-color, 50%), 0 0 0 1px @color;
+    background-clip: padding-box;
+    box-shadow: inset 0 0 0 1px fade(@base-border-color, 50%), 0 0 0 1px @color;
   }
 
   &.icon:before {
@@ -120,11 +121,16 @@
   &:hover {
     z-index: 0;
   }
+  &.btn:focus {
+    z-index: 1;
+    .focus();
+  }
 
   &:first-child {
     border-left: @btn-border;
   }
-  &:last-child {
+  &:last-child,
+  &.selected:last-child {
     border-right: @btn-border;
   }
 
@@ -147,26 +153,26 @@
     }
   }
 
-  &.btn:focus {
-    z-index: 1;
-  }
-  &:focus {
-    .focus();
-  }
-
   &.selected,
   &.selected:first-child,
   &.selected:last-child {
     color: @button-text-color-selected;
-    border: 1px solid @button-border-color-selected;
-  }
-  &.selected + .btn {
-    border-left-color: @button-border-color-selected;
-  }
-  &.selected:focus {
-    box-shadow: inset 0 0 0 1px fade(@button-text-color-selected, 50%), 0 0 0 1px @button-border-color-selected;
+    border-color: @button-border-color-selected;
   }
 
+  & when (@ui-lightness > 50%) {
+    &.selected + .btn {
+      border-left-color: @button-border-color-selected;
+    }
+    &.selected + .selected {
+      border-left-color: mix(@button-border-color, @button-border-color-selected);
+    }
+  }
+
+  &.selected:focus {
+    border-color: @button-background-color-selected;
+    box-shadow: inset 0 0 0 1px fade(@base-border-color, 50%), 0 0 0 1px @button-background-color-selected;
+  }
 }
 
 
