@@ -37,7 +37,6 @@
     margin: 0;
     background-clip: content-box;
     &.active {
-      border-radius: @component-border-radius*1.75 @component-border-radius*1.75 0 0;
       background-color: @tab-background-color-active;
     }
 
@@ -51,12 +50,11 @@
       left: 0;
       right: 0;
       height: inherit;
-      border-radius: @component-border-radius @component-border-radius 0 0;
       border: @tab-border;
+      border-top: none;
       border-bottom-color: @tab-background-color-active;
-      background-image: linear-gradient( hsla(0,0%,100,.02), hsla(0,0%,100,0) );
       background-clip: content-box;
-      box-shadow: inset 0 1px 1px hsla(0,0%,100,.06);
+      box-shadow: inset 0 1px 0 hsla(0,0%,100,.04);
       transition: opacity .16s;
       opacity: 0;
 
@@ -64,10 +62,18 @@
       // of the element with the [data-path] attribute.
       pointer-events: none;
     }
+    &:first-of-type::after {
+      border-left: none;
+    }
+    &:last-of-type::after {
+      border-right: none;
+      box-shadow: inset 0 1px 0 hsla(0,0%,100,.04), 1px 0 0 @base-border-color;
+    }
     &.active::after {
       opacity: 1;
       transition: none;
     }
+
 
 
     // Title ----------------------
@@ -260,19 +266,14 @@
   position: absolute;
   pointer-events: none;
   z-index: 2;
-  top: @tab-border-size;
-  left: @tab-border-size;
-  bottom: @tab-border-size;
+  top: 0;
+  left: 0;
+  bottom: 0;
   width: 2px;
   border-top-left-radius: inherit;
-  border-radius: @component-border-radius 0;
   background: @accent-color;
   opacity: 0;
   transition: opacity .16s;
-
-  .theme-one-light-ui & {
-    left: 0;
-  }
 }
 
 atom-pane.active .tab.active:before {

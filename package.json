@@ -29,17 +29,6 @@
       "maximum": 20,
       "default": "Auto"
     },
-    "layoutMode": {
-      "title": "Layout Mode",
-      "description": "In Auto mode, the UI will automatically adapt based on the window size.",
-      "type": "string",
-      "default": "Auto",
-      "enum": [
-        "Compact",
-        "Auto",
-        "Spacious"
-      ]
-    },
     "tabSizing": {
       "title": "Tab Sizing",
       "description": "In minimum width mode the tabs will be as small as possible but in even width mode, all tabs will be the same size. In auto mode the tabs switch based on the window size.",

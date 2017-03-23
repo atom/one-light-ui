@@ -5,8 +5,10 @@ module.exports =
     atom.config.observe 'one-light-ui.fontSize', (value) ->
       setFontSize(value)
 
-    atom.config.observe 'one-light-ui.layoutMode', (value) ->
-      setLayoutMode(value)
+    # DEPRECATED: This can be removed at some point (added in Atom 1.17/1.18ish)
+    # It removes `layoutMode`
+    if atom.config.get('one-light-ui.layoutMode')
+      atom.config.unset('one-light-ui.layoutMode')
 
     atom.config.observe 'one-light-ui.tabSizing', (value) ->
       setTabSizing(value)
@@ -25,13 +27,6 @@ setFontSize = (currentFontSize) ->
 
 unsetFontSize = ->
   root.style.fontSize = ''
-
-# Layout Mode -----------------------
-setLayoutMode = (layoutMode) ->
-  root.setAttribute('theme-one-light-ui-layoutmode', layoutMode.toLowerCase())
-
-unsetLayoutMode = ->
-  root.removeAttribute('theme-one-light-ui-layoutmode')
 
 # Tab Sizing -----------------------
 setTabSizing = (tabSizing) ->
