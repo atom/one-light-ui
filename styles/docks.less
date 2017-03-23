@@ -1,0 +1,31 @@
+// Hacks ------------------------------
+
+.atom-dock {
+
+  // Remove the 4px gap
+  .atom-dock-inner:not(.atom-dock-open) &-mask {
+    width: 0 !important;
+    height: 0 !important;
+  }
+  &-resize-handle {
+    position: absolute;
+    z-index: 2;
+
+    &.left {
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+    &.right {
+      top: 0;
+      left: 0;
+      bottom: 0;
+    }
+    &.bottom {
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+}
