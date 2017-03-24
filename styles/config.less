@@ -4,7 +4,12 @@
 @auto-breakpoint-height: 600px;
 
 
+// TODO: Add back auto sizing
+
+
 // Small tabs mode ----------------------------------------------
+
+// TODO: Fix minimum, remove auto, add maxiumum
 
 @theme-tabsizing: ~'theme-@{ui-theme-name}-tabsizing';
 
@@ -43,11 +48,5 @@
     -webkit-mask: none;
     margin-left: 1.25em;
     margin-right: 1.25em;
-  }
-
-  .tab.modified .title,
-  .tab:hover .title {
-    -webkit-mask: linear-gradient( to left, hsla(0,0%,0%,0), hsla(0,0%,0%,1) 1em) no-repeat;
-    -webkit-mask-position: -@modified-icon-width*.6 0;
   }
 }
