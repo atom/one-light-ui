@@ -218,7 +218,7 @@
 
 // Active pane marker --------------
 
-.tab-bar .tab::before {
+atom-pane.active .tab.active:before {
   content: "";
   position: absolute;
   pointer-events: none;
@@ -228,14 +228,8 @@
   bottom: 0;
   width: 2px;
   background: @accent-color;
-  opacity: 0;
-  transition: opacity .16s;
 }
 
-atom-pane.active .tab.active:before {
-  opacity: 1;
-  transition-duration: .32s;
-}
 
 // hide marker in docks
 atom-dock .tab-bar .tab::before {
