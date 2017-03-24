@@ -144,10 +144,6 @@
   // Tabs in the docks ----------------------
 
   atom-dock & {
-    .tab {
-      max-width: none; // expand as much as possible
-      min-width: @tab-min-width / 4;
-    }
     .tab.active {
       background-color: @tool-panel-background-color;
     }
@@ -229,7 +225,6 @@ atom-pane.active .tab.active:before {
   width: 2px;
   background: @accent-color;
 }
-
 
 // hide marker in docks
 atom-dock .tab-bar .tab::before {

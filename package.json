@@ -31,12 +31,12 @@
     },
     "tabSizing": {
       "title": "Tab Sizing",
-      "description": "In minimum width mode the tabs will be as small as possible but in even width mode, all tabs will be the same size. In auto mode the tabs switch based on the window size.",
+      "description": "In Even mode all tabs will be the same size. In Maximum mode tabs will take up space as much as possilbe. In Minimum mode the tabs will only take up space as little as needed.",
       "type": "string",
-      "default": "Auto",
+      "default": "Even",
       "enum": [
         "Even",
-        "Auto",
+        "Maximum",
         "Minimum"
       ]
     }

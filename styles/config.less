@@ -4,7 +4,6 @@
 @auto-breakpoint-height: 600px;
 
 
-// TODO: Add back auto sizing
 
 
 // Small tabs mode ----------------------------------------------
@@ -13,18 +12,16 @@
 
 @theme-tabsizing: ~'theme-@{ui-theme-name}-tabsizing';
 
-[@{theme-tabsizing}="minimum"] {
-  .minimum-width-tabs();
-}
-
-@media (max-width: @auto-breakpoint-width) {
-  [@{theme-tabsizing}="auto"] {
-    .minimum-width-tabs();
+[@{theme-tabsizing}="maximum"] {
+  .tab,
+  .tab.active {
+    max-width: none; // expand as much as possible
+    min-width: @tab-min-width / 4;
   }
 }
 
-.minimum-width-tabs() {
-  // auto-size tabs
+
+[@{theme-tabsizing}="minimum"] {
   .tab,
   .tab.active {
     flex: 0 0 auto;
