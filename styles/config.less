@@ -2,25 +2,40 @@
 // Tabs ----------------------------------------------
 
 @theme-tabsizing: ~'theme-@{ui-theme-name}-tabsizing';
+@tab-min-width: 7em; // ~ icon + 6 characters
 
 
-// Maximum ---------------
+// Even (default) ---------------
 
-[@{theme-tabsizing}="maximum"] {
+.tab-bar {
   .tab,
   .tab.active {
-    max-width: none; // expand as much as possible
-    min-width: @tab-min-width / 4;
+    flex: 1 1 0;
+    max-width: none;
+    min-width: @tab-min-width;
   }
+
+  // TODO: Turn this into a config
+  // Truncates the beginning instead
+  // .title.title.title {
+  //   direction: rtl; // change direction
+  // }
 }
 
 
-// Minimum ---------------
+// Minimum (show long paths) ---------------
 
-[@{theme-tabsizing}="minimum"] {
+[@{theme-tabsizing}="minimum"] .tab-bar {
   .tab,
   .tab.active {
     flex: 0 0 auto;
     min-width: 2.75em;
+    max-width: @tab-min-width * 3.3;
+  }
+  atom-dock {
+    .tab,
+    .tab.active {
+      max-width: @tab-min-width * 2;
+    }
   }
 }

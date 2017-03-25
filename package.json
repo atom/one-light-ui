@@ -31,12 +31,11 @@
     },
     "tabSizing": {
       "title": "Tab Sizing",
-      "description": "In Even mode all tabs will be the same size. In Maximum mode tabs will take up space as much as possilbe. In Minimum mode the tabs will only take up space as little as needed.",
+      "description": "In Even mode all tabs will be the same size. Great for quickly closing many tabs. In Minimum mode the tabs will only take as little space as needed and also show longer file names.",
       "type": "string",
       "default": "Even",
       "enum": [
         "Even",
-        "Maximum",
         "Minimum"
       ]
     }

@@ -2,9 +2,7 @@
 // Tabs
 
 @tab-border: 1px solid @tab-border-color;
-@tab-max-width: @ui-size*22;
-@tab-min-width: @ui-size*7; // icon + 5 characters
-@title-padding: .75em;
+@title-padding: .66em;
 @icon-padding-top: .5em; // 2.5 (total) - 1.5 (text) / 2
 @icon-padding-right: .5em;
 
@@ -34,8 +32,6 @@
     padding: 0;
     margin: 0;
     height: inherit;
-    max-width: @tab-max-width;
-    min-width: @tab-min-width;
     font-size: inherit;
     line-height: @ui-tab-height;
     color: @tab-text-color;
@@ -64,15 +60,15 @@
     .title {
       text-align: center;
       margin: 0 @title-padding;
-      text-overflow: clip;
     }
 
 
     // Icons ----------------------
 
     .title.title:before {
-      margin-right: .3em;
+      margin-right: .1em;
       font-size: 1.1em;
+      text-align: left;
     }
 
     // Close icon ----------------------
@@ -144,9 +140,6 @@
   // Tabs in the docks ----------------------
 
   atom-dock & {
-    .tab {
-      max-width: @tab-max-width / 1.5;
-    }
     .tab.active {
       background-color: @tool-panel-background-color;
     }
@@ -202,11 +195,9 @@
 
   // Overrides ----------------------
 
+  // keep tabs same size when active
   .tab,
   .tab.active {
-    flex: 1;
-
-    // keep tabs same size when active
     padding-right: 0;
     .title {
       padding: 0;
