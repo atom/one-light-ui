@@ -230,6 +230,9 @@ atom-dock .tab-bar .tab::before {
 
 .tab-bar .tab.active {
   &[data-type$="Editor"],
+  &[data-type$="AboutView"],
+  &[data-type$="TimecopView"],
+  &[data-type$="StyleguideView"],
   &[data-type="MarkdownPreviewView"] {
     color: @tab-text-color-editor;
     background-color: @tab-background-color-editor; // Match syntax background color
