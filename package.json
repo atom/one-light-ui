@@ -27,7 +27,8 @@
       ],
       "minimum": 8,
       "maximum": 20,
-      "default": "Auto"
+      "default": "Auto",
+      "order": 1
     },
     "tabSizing": {
       "title": "Tab Sizing",
@@ -37,7 +38,15 @@
       "enum": [
         "Even",
         "Minimum"
-      ]
+      ],
+      "order": 2
+    },
+    "hideDockButtons": {
+      "title": "Hide dock toggle buttons",
+      "description": "Note: When hiding the toggle buttons, opening a dock needs to be done by using the keyboard or other alternatives.",
+      "type": "boolean",
+      "default": "false",
+      "order": 3
     }
   }
 }
