@@ -1,39 +1,19 @@
-// Hacks ------------------------------
 
-.atom-dock {
+// Docks ------------------------------
 
-  // Remove the 4px gap
-  .atom-dock-inner:not(.atom-dock-open) &-mask {
-    width: 0 !important;
-    height: 0 !important;
-  }
-  &-resize-handle {
-    position: absolute;
-    z-index: 2;
+// Make resize handle appear like a big border
+.atom-dock-resize-handle,
+.atom-dock-toggle-button-inner {
+  background-color: @base-border-color;
+}
 
-    &.left {
-      top: 0;
-      right: 0;
-      bottom: 0;
-    }
-    &.right {
-      top: 0;
-      left: 0;
-      bottom: 0;
-    }
-    &.bottom {
-      top: 0;
-      left: 0;
-      right: 0;
-    }
-  }
 
-  // Borders
-  &-inner.left.atom-dock-open {
-    border-right: 1px solid @base-border-color;
-  }
-  &-inner.right.atom-dock-open {
-    border-left: 1px solid @base-border-color;
-  }
-
+// Makes sure docks don't cover git markers in the center
+// TODO: Move to core
+atom-dock.left,
+atom-dock.right {
+  min-width: 4px;
+}
+atom-dock.bottom {
+  min-height: 4px;
 }
