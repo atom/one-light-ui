@@ -12,14 +12,10 @@ describe "One Light UI theme", ->
     atom.config.set('one-light-ui.fontSize', 'Auto')
     expect(document.documentElement.style.fontSize).toBe ''
 
-  it "allows the layout mode to be set via config", ->
-    expect(document.documentElement.getAttribute('theme-one-light-ui-layoutmode')).toBe 'auto'
-
-    atom.config.set('one-light-ui.layoutMode', 'Spacious')
-    expect(document.documentElement.getAttribute('theme-one-light-ui-layoutmode')).toBe 'spacious'
-
   it "allows the tab sizing to be set via config", ->
-    expect(document.documentElement.getAttribute('theme-one-light-ui-tabsizing')).toBe 'auto'
-
     atom.config.set('one-light-ui.tabSizing', 'Minimum')
     expect(document.documentElement.getAttribute('theme-one-light-ui-tabsizing')).toBe 'minimum'
+
+  it "allows the dock toggle buttons to be hidden via config", ->
+    atom.config.set('one-light-ui.hideDockButtons', true)
+    expect(document.documentElement.getAttribute('theme-one-light-ui-dock-buttons')).toBe 'hidden'
