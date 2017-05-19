@@ -1,42 +1,27 @@
 ## One Light UI theme [![Build Status](https://travis-ci.org/atom/one-light-ui.svg?branch=master)](https://travis-ci.org/atom/one-light-ui)
 
-A light UI theme that adjusts to most syntax themes.
+A light UI theme that adapts to most syntax themes.
 
-![one-light-ui](https://cloud.githubusercontent.com/assets/378023/6980108/fb10eec2-da27-11e4-9e52-7f4115044a97.png)
+![One light UI](https://cloud.githubusercontent.com/assets/378023/26246819/0826f04e-3cd6-11e7-98eb-cd94bc48b090.png)
 
-> The font used in the screenshots is [Fira Mono](https://github.com/mozilla/Fira). Icons by [file-icons](https://atom.io/packages/file-icons).
+> The font used in the screenshot is [Fira Mono](https://github.com/mozilla/Fira).
 
-### Combine with other Syntax themes
-
-There is a matching [syntax theme](https://atom.io/themes/one-light-syntax), but most other syntax themes work fine as well.
-
-![one-light-ui + sepia](https://cloud.githubusercontent.com/assets/378023/6980110/fc59aca6-da27-11e4-963c-7ecd8400b2c0.png)
-> One light + [Sepia](https://atom.io/themes/sepia-syntax)
-
-![one-light-ui + chester](https://cloud.githubusercontent.com/assets/378023/6980109/fb13e384-da27-11e4-8324-8d8ee2de5ad5.png)
-> One light + [Chester](https://atom.io/themes/chester-atom-syntax)
 
 ### Install
 
-This theme is installed by default with Atom and can be activated by going to the __Settings > Themes__ section and selecting "One Light" from the __UI Themes__ drop-down menu.
+This theme comes bundled with Atom and can be activated by going to the __Settings > Themes__ section and selecting "One Light" from the __UI Themes__ drop-down menu.
+
 
 ### Settings
 
-![Theme settings](https://cloud.githubusercontent.com/assets/378023/26239674/eee11096-3cb8-11e7-84ce-4e84ab4817ce.png)
+In the theme settings you can:
 
-In the theme settings you can change the __Font Size__ to scale the whole UI up or down.
+- Change the __Font Size__ to scale the whole UI up or down.
+- Choose between 3 __Tab Sizing__ modes.
+- Hide the  __dock buttons__.
 
-Switch between 3 __Layout Modes__:
+To make changes, go to `Settings > Themes > One Light UI > Settings` or the cog icon next to the theme picker.
 
-1. `Auto` (default) - In Auto mode, the UI and font size will automatically change based on the window size.
-2. `Compact` - In Compact mode, the UI stays compact to leave more space for the editor.
-3. `Spacious` - In Spacious mode, the UI is expanded, giving some breathing room.
-
-And pick a __Tab Sizing__ mode:
-
-1. `Auto` (default) - In Auto mode, the tabs switch based on the window size.
-2. `Minimum` - In Mimimum mode, the tabs will be as small as possible.
-3. `Even` - In Even mode, all tabs will be the same size.
 
 ### Customize
 
@@ -49,6 +34,7 @@ It's also possible to resize only certain areas by adding the following to your 
   .status-bar { font-size: 12px; }
 }
 ```
+
 
 ### FAQ
 
