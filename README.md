@@ -22,7 +22,7 @@ This theme is installed by default with Atom and can be activated by going to th
 
 ### Settings
 
-![Theme settings](https://cloud.githubusercontent.com/assets/378023/26239586/9b242592-3cb8-11e7-8e35-b606d59f640d.png)
+![Theme settings](https://cloud.githubusercontent.com/assets/378023/26239674/eee11096-3cb8-11e7-84ce-4e84ab4817ce.png)
 
 In the theme settings you can change the __Font Size__ to scale the whole UI up or down.
 
