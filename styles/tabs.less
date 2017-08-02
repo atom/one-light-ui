@@ -83,6 +83,7 @@
       width: 1.5em;
       height: 1.5em;
       line-height: 1.5;
+      text-align: center;
       border-radius: @component-border-radius;
       background-color: inherit;
       overflow: hidden;
@@ -97,12 +98,10 @@
       }
       &::before {
         z-index: 1;
-        position: absolute;
         font-size: 1.1em;
-        width: inherit;
-        height: inherit;
-        line-height: inherit;
-        text-align: center;
+        vertical-align: -.05em; // Adjust center for the 0.1em font-size increase
+        width: auto;
+        height: auto;
         pointer-events: none;
       }
     }
