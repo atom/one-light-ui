@@ -14,13 +14,20 @@
     }
   }
 
+  // Selected state
   .selected:before {
     background: @background-color-selected;
   }
 
-  &:focus .selected:before {
-    color: contrast(@button-background-color-selected);
-    background: @button-background-color-selected;
+  // Focus + selected state
+  &:focus {
+    .selected.list-item > .name,
+    .selected.list-nested-item > .list-item > .name {
+      color: contrast(@button-background-color-selected);
+    }
+    .selected:before {
+      background: @button-background-color-selected;
+    }
   }
 }
 
