@@ -4,13 +4,10 @@ describe "One Light UI theme", ->
       atom.packages.activatePackage('one-light-ui')
 
   it "allows the font size to be set via config", ->
-    expect(document.documentElement.style.fontSize).toBe ''
+    expect(document.documentElement.style.fontSize).toBe '12px'
 
     atom.config.set('one-light-ui.fontSize', '10')
     expect(document.documentElement.style.fontSize).toBe '10px'
-
-    atom.config.set('one-light-ui.fontSize', 'Auto')
-    expect(document.documentElement.style.fontSize).toBe ''
 
   it "allows the tab sizing to be set via config", ->
     atom.config.set('one-light-ui.tabSizing', 'Maximum')
