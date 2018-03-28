@@ -20,3 +20,11 @@ describe "One Light UI theme", ->
   it "allows the dock toggle buttons to be hidden via config", ->
     atom.config.set('one-light-ui.hideDockButtons', true)
     expect(document.documentElement.getAttribute('theme-one-light-ui-dock-buttons')).toBe 'hidden'
+
+  it "allows the tree-view headers to be sticky via config", ->
+    atom.config.set('one-light-ui.stickyHeaders', true)
+    expect(document.documentElement.getAttribute('theme-one-light-ui-sticky-headers')).toBe 'sticky'
+
+  it "allows the tree-view headers to not be sticky via config", ->
+    atom.config.set('one-light-ui.stickyHeaders', false)
+    expect(document.documentElement.getAttribute('theme-one-light-ui-sticky-headers')).toBe null

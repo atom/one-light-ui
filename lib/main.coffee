@@ -11,6 +11,9 @@ module.exports =
     atom.config.observe 'one-light-ui.hideDockButtons', (value) ->
       setHideDockButtons(value)
 
+    atom.config.observe 'one-light-ui.stickyHeaders', (value) ->
+      setStickyHeaders(value)
+
     # DEPRECATED: This can be removed at some point (added in Atom 1.17/1.18ish)
     # It removes `layoutMode`
     if atom.config.get('one-light-ui.layoutMode')
@@ -20,6 +23,7 @@ module.exports =
     unsetFontSize()
     unsetTabSizing()
     unsetHideDockButtons()
+    unsetStickyHeaders()
 
 
 # Font Size -----------------------
@@ -50,3 +54,15 @@ setHideDockButtons = (hideDockButtons) ->
 
 unsetHideDockButtons = ->
   root.removeAttribute('theme-one-light-ui-dock-buttons')
+
+
+# Sticky Headers -----------------------
+
+setStickyHeaders = (stickyHeaders) ->
+  if stickyHeaders
+    root.setAttribute('theme-one-light-ui-sticky-headers', 'sticky')
+  else
+    unsetStickyHeaders()
+
+unsetStickyHeaders = ->
+  root.removeAttribute('theme-one-light-ui-sticky-headers')
