@@ -1,22 +1,32 @@
-describe "One Light UI theme", ->
+themeName = 'one-light-ui'
+
+describe "#{themeName} theme", ->
   beforeEach ->
     waitsForPromise ->
-      atom.packages.activatePackage('one-light-ui')
+      atom.packages.activatePackage(themeName)
 
   it "allows the font size to be set via config", ->
     expect(document.documentElement.style.fontSize).toBe '12px'
 
-    atom.config.set('one-light-ui.fontSize', '10')
+    atom.config.set("#{themeName}.fontSize", '10')
     expect(document.documentElement.style.fontSize).toBe '10px'
 
   it "allows the tab sizing to be set via config", ->
-    atom.config.set('one-light-ui.tabSizing', 'Maximum')
-    expect(document.documentElement.getAttribute('theme-one-light-ui-tabsizing')).toBe 'maximum'
+    atom.config.set("#{themeName}.tabSizing", 'Maximum')
+    expect(document.documentElement.getAttribute("theme-#{themeName}-tabsizing")).toBe 'maximum'
 
   it "allows the tab sizing to be set via config", ->
-    atom.config.set('one-light-ui.tabSizing', 'Minimum')
-    expect(document.documentElement.getAttribute('theme-one-light-ui-tabsizing')).toBe 'minimum'
+    atom.config.set("#{themeName}.tabSizing", 'Minimum')
+    expect(document.documentElement.getAttribute("theme-#{themeName}-tabsizing")).toBe 'minimum'
 
   it "allows the dock toggle buttons to be hidden via config", ->
-    atom.config.set('one-light-ui.hideDockButtons', true)
-    expect(document.documentElement.getAttribute('theme-one-light-ui-dock-buttons')).toBe 'hidden'
+    atom.config.set("#{themeName}.hideDockButtons", true)
+    expect(document.documentElement.getAttribute("theme-#{themeName}-dock-buttons")).toBe 'hidden'
+
+  it "allows the tree-view headers to be sticky via config", ->
+    atom.config.set("#{themeName}.stickyHeaders", true)
+    expect(document.documentElement.getAttribute("theme-#{themeName}-sticky-headers")).toBe 'sticky'
+
+  it "allows the tree-view headers to not be sticky via config", ->
+    atom.config.set("#{themeName}.stickyHeaders", false)
+    expect(document.documentElement.getAttribute("theme-#{themeName}-sticky-headers")).toBe null
